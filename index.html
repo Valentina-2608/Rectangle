@@ -1,0 +1,55 @@
+﻿ <!DOCTYPE HTML>
+<html>
+<head>
+<title>Example</title>
+<style>
+.main{width:500px;
+height:400px;
+background-color:#CFCDD7;
+margin:0 auto;}
+p{font-size:20px;
+font-weight:bold;
+margin-left:20px;
+padding-top:20px;}
+input{margin-left:20px;}
+button{margin-left:20px;
+margin-top:20px;}
+</style>
+</head>
+<body>
+<div class="main">
+<p>Enter the lenght of the rectangle's first side</p>
+<input type="text" id="firstSide"><br>
+<p>Enter the lenght of the rectangle's second side</p>
+<input type="text" id="secondSide"><br>
+<button id="calculation">Calculate</button>
+<button id="clear">Clear</button>
+<p id="square">Square:</p>
+<p id="perimeter">Perimeter:</p>
+
+</div>
+<script>
+let firstSide=document.getElementById('firstSide');
+let secondSide=document.getElementById('secondSide');
+let square=document.getElementById('square');
+let perimeter=document.getElementById('perimeter');
+let calculation=document.getElementById('calculation');
+let clear=document.getElementById('clear');
+calculation.addEventListener('click',func1);
+clear.addEventListener('click',func2);
+function func1(){
+	let squareRectangle=parseFloat(firstSide.value)*parseFloat(secondSide.value);
+	let perimeterRectangle=2*(parseFloat(firstSide.value)+parseFloat(secondSide.value));
+	square.innerHTML=square.innerHTML+' '+ squareRectangle;
+	perimeter.innerHTML=perimeter.innerHTML+' '+ perimeterRectangle;
+};
+
+function func2(){
+	firstSide.value='';
+	secondSide.value='';
+	square.innerHTML='Square:';
+	perimeter.innerHTML='Perimeter:';
+}
+</script>
+</body>
+</html>
